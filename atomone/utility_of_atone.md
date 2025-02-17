@@ -19,7 +19,7 @@ To distinguish between Cosmos, the internet of blockchains, and the Cosmos Hub,
 the first blockchain and hub for Cosmos, we will refer to the Cosmos Hub in
 this article as Gaia, the name of the Cosmos Hub program.
 
-**The Dual-Token Model**
+### The Dual-Token Model
 
 In the original Cosmos Hub vision ATOM was not meant to be a monetary token or
 fee token, but rather ATOM was a new class of token that we dubbed the "staking
@@ -60,7 +60,7 @@ less of a staking-token and more of a monetary token, sometimes pitched as
 it would have "more utility". Simultaneously, there is a widespread sentiment
 that "ATOM has no utility".
 
-**Introducing AtomOne**
+### Introducing AtomOne
 
 For these reasons we and many supporters of the original (Atom 1.0) vision have
 forked Gaia into a new chain named AtomOne. Instead of Gaia's ATOM token
@@ -98,7 +98,7 @@ be considered income, but rather a penalty for not staking. See the [staking-tok
 In short, ATOM and ATONE's only utility should be staking, and other utilities
 should be offered by ICS hosted applications.
 
-**Cosmos Needs Viral Dapps**
+### Cosmos Needs Viral Dapps
 
 The problem is that there are no applications in the Cosmos ecosystem that have
 thus far saturated a blockchain's transaction capacity to the degree that
@@ -123,7 +123,7 @@ messages), but their smart contract system is optimized for high throughput
 financial transactions and relatively unsuitable for non-financial dapp
 development. 
 
-**The Three Layer Cake**
+### The Three Layer Cake
 
 The real bottleneck for realizing ATOM & ATONE's ultimate utility are:
  * A consumer application that gains viral widespread adoption
@@ -155,7 +155,7 @@ release of ICS which required Gaia governance to approve of new chains
 secured by the same validator set, requiring much coordination and making the
 adoption of new applications on Gaia ICS a political endeavor.
 
-**Fractional Staking is Dangerous**
+### Fractional Staking is Dangerous
 
 While PSS makes validator participation permissionless, it suffers from
 unbalanced "fractional staking" where one ATOM staked on one validator may be
@@ -183,7 +183,7 @@ to greener pastures with better security (more reputable validators, more value
 staked vs available for theft), while the default assumption of PSS is that the
 ICS application has no control over its validator set.
 
-**Permissionless Deployment**
+### Permissionless Deployment
 
 What is needed is not permissionless validator participation (we need the
 opposite), but rather permissionless application chain deployment. It should be
@@ -230,7 +230,7 @@ Ask yourself how many people you know that really use blockchains and crypto,
 and what they use them for. Most blockchain applications are DEFI applications,
 and most of them are about speculation, especially of meme-coins.
 
-**We Need Decentralized Social & Knowledge Systems**
+### We Need Decentralized Social & Knowledge Systems
 
 Is it that blockchains have no more utility than for DEFI applications that
 already exist? The opposite is true. There's nothing quite as needed today as
@@ -291,7 +291,7 @@ Clearly we need decentralized services more than ever, but the reality is
 despite all the interest in cryptocurrencies, these non-DEFI dapps have not
 succeeded in gaining adoption.
 
-**We Need Better Smart Contract Platforms**
+### We Need Better Smart Contract Platforms
 
 The main obstacle is the immaturity of the space; the difficulty of "dapp"
 (decentralized application) development and the limitations of smart contract
@@ -322,7 +322,7 @@ how and why, and how Gno offers "seamless interoperability of untrusted user
 programs" unlike any other smart contract systems, check
 out this [2024 Gophercon talk on Gno](https://github.com/gnolang/workshops/tree/main/presentations/2024-07-09--gophercon-us--jae).
 
-**AtomOne vs Gno.land**
+### AtomOne vs Gno.land
 
 Gno.land (GNOT) is a separate chain from AtomOne (ATONE/PHOTON), but Gno.land
 and AtomOne are complementary and symbiotic systems. While gno.land solves the
@@ -344,7 +344,7 @@ them.
 
 ## Utility as IBC Hub
 
-**The N^2 IBC Problem**
+### The N^2 IBC Problem
 
 Gaia has many IBC connections to other chains. Many of these chains,
 such as the Osmosis AMM DEX chain also have many IBC connections. Arguably all
@@ -369,7 +369,7 @@ Cosmos ecosystem eventually is compelled the solve this problem. The goal of
 Gaia, but perhaps moreso now AtomOne, is to present the solution before it
 becomes a problem, thereby gaining adoption before other alternatives.
 
-**Crypto Court**
+### Crypto Court
 
 Besides solving the N-squared problem of efficiency, IBC hubs also offer an
 important security feature which is not yet well implemented, but necessarily
@@ -412,7 +412,7 @@ is that failure resolution is possible.
 > hub will be protected when it needs intervention.
 > - https://github.com/tendermint/atom_one/tree/13a717d5623e84ccb37127bb0301ae0e4bbb6999#the-need-for-hubs
 
-**ICS/VaaS Hub Model vs IBC Hub Model**
+### ICS/VaaS Hub Model vs IBC Hub Model
 
 While the ICS/VaaS hub's primary business model is about scaling transaction
 throughput, the IBC hub business is a natural complementary business model
@@ -434,14 +434,14 @@ utility of AtomOne and IBC hubs and ICS/VaaS hubs in general, and the primary
 utility of the PHOTON token as the fee payment token for AtomOne, but there is
 another element to the PHOTON fee-token to be discussed.
 
-**Memecoins**
+### Memecoins
 
 First, let's take a look at the origin of the memecoin. The first memecoin was
 created by Billy Markus and Jackson Palmer who decided to make Dogecoin as a
 joke. It had no particular purpose but to have fun, and as a form of satire
 about the speculative nature of Bitcoin and crypto.
 
-**Missioncoins**
+### Missioncoins
 
 There are many memecoins today, with people speculating on memecoins based on
 the potential virality of the associated meme, but quite a distraction from the
