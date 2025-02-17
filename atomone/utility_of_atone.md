@@ -2,94 +2,126 @@ _NOTE: this article contains forward looking statements that should be
 interpreted as a proposed roadmap for AtomOne, rather than as promises by the
 authors._
 
-_NOTE: if you can read this, this is still a rough draft._
-
 # The Utility of the ATOM and ATONE Staking Tokens
 
 ## Introduction
 
 Tendermint pioneered POS (proof-of-stake) in 2014 (by solving the "nothing at
 stake" problem) using classical consensus techniques originally developed in
-the 80's for fault-tolerant missile defense systems. Cosmos was the first
+the 1980's for fault-tolerant missile defense systems. Cosmos was the first
 blockchain to launch on Tendermint in 2019, and described a network of IBC
 (inter-blockchain communication) connected blockchains. IBC as an acronym was
 coined for and by Cosmos. Cosmos in turn spurred a resurgence of interest and
 capital into consensus research worldwide. Today there are thousands of proof
 of stake blockchains.
 
+**The Dual-Token Model**
+
 In the original Cosmos vision ATOM was not meant to be a monetary token or fee
 token, but rather ATOM was a new class of token that we dubbed the "staking
-token" (see [Cosmos Token Model](https://github.com/cosmos/cosmos/blob/master/Cosmos_Token_Model.pdf)).
-ATOM was designed to inflate at a rate beetween 7% and 20% annually and the
-newly created ATOMs distributed back to the stakers pro-rata, effectively
-serving as punishment for not staking. A separate fee token was proposed that
-would serve as the fee token which would not suffer from ATOM's continuous
-inflation. ATOM would be like proof-of-work mining hardware, while the fee
-token would be like deflationary bitcoins, and the fee token is not concerned
-with consensus or chain governance. This distinction between staking token and
-fee token is called the "dual-token model". 
+token" ATOM was designed to inflate at a rate beetween 7% and 20% annually and
+the newly created ATOMs distributed back to the stakers pro-rata, effectively
+serving as punishment for not staking, while intentionally making them
+unsuitable as a token for payments or savings. 
+
+A separate fee-token was proposed for Cosmos that would serve as the fee-token
+which would not suffer from ATOM's continuous inflation. ATOM would be like
+proof-of-work mining hardware, while the fee token would be like deflationary
+bitcoins, and the fee-token is not concerned with consensus or chain
+governance. This distinction between staking-token and fee-token is called the
+"dual-token model". (see [Cosmos Token Model](https://github.com/cosmos/cosmos/blob/master/Cosmos_Token_Model.pdf)
+which clearly suggests the dual token model and its advantages).  
 
 The dual-token distinction is especially important for Cosmos and AtomOne as an
 IBC hub because a double-spend attack on the hub can steal IBC pegged tokens on
 all the chains that connect via IBC to the hub chain. With a single-token model
 there is no restriction for whales to take over the consensus of the hub; and
 it is assumed that the singular token is widely distributed and easy to
-acquire. In the dual-token model such as with ATONE and PHOTON, PHOTON holders
-cannot conduct a hostile takeover of ATONE unless the ATONE stakers wanted to
-sell; and even if they did sell, in the process of buying ATONE tokens the
-attacker would incur a significantly higher cost of acquiring ATONEs.
+acquire. In dual-token models with separate staking-token and fee-token where
+the fee-token cannot be converted to staking-tokens (except via the normal
+exchange mechanisms) the fee-token holders cannot conduct a hostile takeover of
+the staking-token distribution unless the staking-token holders wanted to sell;
+and even if they did sell, in the process of buying staking-tokens the attacker
+would incur a significantly higher cost in price and time.
 
 Despite popular demand Cosmos's fee-token has not been implemented for Cosmos
 (but [is for AtomOne](https://github.com/atomone-hub/atomone/pull/57)), and
 instead many in the Cosmos ecosystem developed LS (liquid staking) derivatives
 as a convenient way to dodge ATOM's inflation, even though LS ultimately
-undermines the security model of staking tokens. Furthermore with the
+undermines the security model of staking-tokens. Furthermore with the
 ["ATOM 2.0" proposal](https://forum.cosmos.network/t/proposal-82-rejected-atom-2-0-a-new-vision-for-cosmos-hub/7328)
 and subsequent proposals there was and still is a push to make the ATOM token
-less of a staking token and more of a monetary token, sometimes pitched as
+less of a staking-token and more of a monetary token, sometimes pitched as
 "internet capital", or generally something with lower inflation rate such that
 it would have "more utility". Simultaneously, there is a widespread sentiment
 that "ATOM has no utility".
 
-ATOM/ATONE are for staking, not for paying. Anyone complaining about the high
-inflation rate of the ATOM/ATONE token is fundamentally misinformed about its
-purpose and tokenomics. ATOM/ATONE does have utility as a staking token, but it
-depends on a large volume of transactions (whether DEFI or not). The "spam
-prevention" or "priority" transaction fees may be small for each transaction,
-but they add up significantly with scale. This is why Cosmos and AtomOne offer
-ICS. ATOM/ATONE stakers earn a portion of the transaction fees not just on the
-hub, but across all ICS shards. Whether the transaction fees across the ICS
-shards are paid in PHOTON or any other third-party token, ATOM/ATONE stakers
-earn them as income. (The ATOM/ATONE inflation on the other hand should not be
-considered income, but rather a penalty for not staking. See the [staking token tax proposal](https://github.com/atomone-hub/future-security-agency/blob/main/WIP/002-staking-tokens-irs.md).) In
-short, ATOM and ATONE's only utility should be staking, and other utilities
-should be offered by ICS hosted applications.
+**Introducing AtomOne**
+
+For these reasons we and many supporters of the original (Atom 1.0) vision have
+forked Cosmos into a new chain named AtomOne. Instead of Cosmos's ATOM token
+AtomOne has the ATONE token. And while LS derivatives are banned for the ATONE
+token, AtomOne will finally support the PHOTON fee-token which can be acquired
+by (one-way) burning ATONE tokens. AtomOne has a
+[constitution](https://github.com/atomone-hub/genesis/blob/main/CONSTITUTION.md)
+and improved structured governance model that will ensure a clear division of
+roles: PHOTON serves as the exclusive fee-token for transactions across all
+shards, IBC fees, and ICS/VaaS payments, while ATONE powers governance and
+staking. ATONE can be burned to PHOTON with a capped supply of PHOTONs,
+ensuring economic balance and long-term scalability, but PHOTONs cannot be
+converted back into ATONE tokens.
+
+AtomOne and Cosmos are "coopetative" just as peer validators are, and together
+we hope to fulfill the multi-hub vision as originally described for Cosmos and
+also as described later. The multi-hub model is especially important to give
+users freedom of choice, to prevent centralization of the Cosmos, and to test
+innovations in isolation for the sake of security, as Litecoin and many forks
+also did for Bitcoin.
 
 ## The Problem
 
-However, there are no applications in the Cosmos ecosystem that have thus far
-saturated a blockchain's transaction capacity to the degree that horizontal
-scaling is necessary. The Cosmos ecosystem has the CosmosSDK, as well as
-various VM smart contract platforms based on the EVM as well as CosmWASM yet we
-don't have a killer consumer app. Even [Osmosis's blocks](https://www.mintscan.io/osmosis/block)
-aren't saturated.
+ATOM & ATONE are for staking, not for paying. Anyone complaining about the high
+inflation rate of the ATOM & ATONE token is fundamentally misinformed about its
+purpose and tokenomics. ATOM & ATONE does have utility as a staking-token, but
+it depends on a large volume of transactions (whether DEFI or not). The "spam
+prevention" or "priority" transaction fees may be small for each transaction,
+but they add up significantly with scale. This is why Cosmos and AtomOne offer
+ICS. ATOM & ATONE stakers earn a portion of the transaction fees not just on
+the hub, but across all ICS shards. Whether the transaction fees across the ICS
+shards are paid in PHOTON or any other third-party token, ATOM & ATONE stakers
+earn them as income. (The ATOM & ATONE inflation on the other hand should not
+be considered income, but rather a penalty for not staking. See the [staking-token tax proposal](https://github.com/atomone-hub/future-security-agency/blob/main/WIP/002-staking-tokens-irs.md) and also [this blog post from Germany](https://patrick-wieth.medium.com/why-i-did-not-pay-taxes-on-staking-rewards-and-why-it-makes-sense-b6cc3b0ec4e).)
+In short, ATOM and ATONE's only utility should be staking, and other utilities
+should be offered by ICS hosted applications.
 
-The problem is not just in the Cosmos ecosystem. Today, the userbase of crypto
-has not been significantly increasing. Bitcoin has the same number of unique
-addresses seen today in 2025 as was seen in 2017, and this metric is trending
-downward. Ethereum has rollup chains but yet the main chain is saturated in gas
-at 15tps (transactions per second), and of rollups, Coinbase's Base today runs
-about 100tps, and another popular L2 called Aribtrum while has a higher
-potentiak throughput capacity, runs today at about the same number of tps as
-mainnet Ethereum. The problem isn't transaction throughput which is clearly
-offered by rollup chains, but rather there hasn't been a killer app in Ethereum
-in a while since stablecoins and NFTs. Solana has one of the highest
-transaction throughputs, about 400tps (not the advertised 4000 which includes
-consensus messages), but their smart contract system is optimized for high
-throughput financial transactions and relatively unsuitable for non-financial
-dapp development. 
+**Cosmos Needs Viral Dapps**
 
-The real bottleneck for realizing ATOM/ATONE's ultimate utility are:
+The problem is that there are no applications in the Cosmos ecosystem that have
+thus far saturated a blockchain's transaction capacity to the degree that
+horizontal scaling is necessary. The Cosmos ecosystem has the CosmosSDK, as
+well as various VM smart contract platforms based on the EVM as well as
+CosmWASM yet we don't have a killer consumer app. Even [Osmosis's
+blocks](https://www.mintscan.io/osmosis/block) aren't saturated.
+
+This problem is not just in the Cosmos ecosystem. Today, the userbase of crypto
+has not been significantly increasing. Bitcoin has the same number of [unique
+addresses](https://www.blockchain.com/explorer/charts/n-unique-addresses) seen
+today in 2025 as was seen in 2017, and this metric is trending downward.
+Ethereum has rollup chains but yet the main chain is saturated in gas at 15tps
+(transactions per second), and of rollups, Coinbase's Base today runs about
+100tps, and another popular L2 called Aribtrum while has a higher potentiak
+throughput capacity, runs today at about the same number of tps as mainnet
+Ethereum. The problem isn't transaction throughput which is clearly offered by
+rollup chains, but rather there hasn't been a killer app in Ethereum in a while
+since stablecoins and NFTs. Solana has one of the highest transaction
+throughputs, about 400tps (not the advertised 4000 which includes consensus
+messages), but their smart contract system is optimized for high throughput
+financial transactions and relatively unsuitable for non-financial dapp
+development. 
+
+**The Three Layer Cake**
+
+The real bottleneck for realizing ATOM & ATONE's ultimate utility are:
  * A consumer application that gains viral widespread adoption
  * A better smart contract platform that can enable the above
  * A permissionless way to launch ABCI containers that can support any kind of
@@ -99,31 +131,18 @@ These three points correspond to the "3 layer cake" model of the future
 blockchain stack, each one depending on the layer below it:
  * Layer 3: smart contract dapp
  * Layer 2: smart contract platform/VM
- * Layer 1: ICS hosting provider
+ * Layer 1: ICS/VaaS hosting provider (defined later)
 
 The next generation of viral consumer applications will probably be built on
 next generation smart contracting platforms that offer significant advantages
-such as succinctness and general expressiveness over those that already exist
-today. Even if such a platform is not developed within our ecosystem, ICS hubs
-can benefit from external developments by offering the best scaling solution;
-after all, it isn't Amazon web-servcies nor any digital cloud provider that
-develops the applications that run on these platform providers--it is the
-general public.
+such as succinctness, general expressiveness, and object-oriented encapsulation
+over those that already exist today. Even if such a platform is not developed
+within our ecosystem, ICS/VaaS hubs can benefit from external developments by
+offering the best scaling solution; after all, it isn't Amazon web-servcies nor
+any digital cloud provider that develops the applications that run on these
+platform providers--it is the general public.
 
-AtomOne is a fork of Cosmos that will address these bottlenecks head on, and
-aims to upstream these innovations back to Cosmos so that both hubs can benefit
-and fulfill the original multi-hub vision of Cosmos. Instead of Cosmos's ATOM
-token AtomOne has the ATONE token. And while LS derivatives are banned for the
-ATONE token, AtomOne will finally support the PHOTON fee-token which can be
-acquired by (one-way) burning ATONE tokens. And AtomOne has a [constitution](https://github.com/atomone-hub/genesis/blob/main/CONSTITUTION.md)
-and improved structured governance model that will ensure a clear division of
-roles: PHOTON serves as the exclusive fee token for transactions across all
-shards, IBC fees, and ICS payments, while ATONE powers governance and staking.
-ATONE can be burned to PHOTON under capped conditions, ensuring economic
-balance and long-term scalability, but PHOTONs cannot be converted back into
-ATONE tokens.
-
-## Layer 1: ICS Hosting Provider
+## Layer 1: ICS/VaaS Hosting Provider
 
 Cosmos offers [PSS (partial set security)](https://cosmos.github.io/interchain-security/features/partial-set-security)
 which allows the Cosmos validators to permissionlessly participate in 
@@ -132,12 +151,14 @@ release of ICS which required Cosmos hub governance to approve of new chains
 secured by the same validator set, requiring much coordination and making the
 adoption of new applications on Cosmos ICS a political endeavor.
 
+**Fractional Staking is Dangerous**
+
 While PSS makes validator participation permissionless, it suffers from
 unbalanced "fractional staking" where one ATOM staked on one validator may be
-used as staking collateral for a different number and set of chains as another
-ATOM staked on another validator. There are no bounds on how many chains a
-validator can validate for with the ATOMs delegated to it, so a subset of
-validators could validate on PSS chains with the intent of attacking all of
+used as staking collateral for a different number and set of chains as compared
+to another ATOM staked on another validator. There are no bounds on how many
+chains a validator can validate for with the ATOMs delegated to it, so a subset
+of validators could validate on PSS chains with the intent of attacking all of
 them simultaneously. In order to prevent honest validators from foiling this
 plan, the malicious validators can participate in chains that don't offer
 positive ROI for validators (except when the chain is attacked). Therefore, PSS
@@ -157,6 +178,8 @@ set. Furthermore, competition among hubs can help ICS applications to migrate
 to greener pastures with better security (more reputable validators, more value
 staked vs available for theft), while the default assumption of PSS is that the
 ICS application has no control over its validator set.
+
+**Permissionless Deployment**
 
 What is needed is not permissionless validator participation (we need the
 opposite), but rather permissionless application chain deployment. It should be
@@ -201,6 +224,8 @@ capabilities.
 Ask yourself how many people you know that really use blockchains and crypto,
 and what they use them for. Most blockchain applications are DEFI applications,
 and most of them are about speculation, especially of meme-coins.
+
+**We Need Decentralized Social & Knowledge Systems**
 
 Is it that blockchains have no more utility than for DEFI applications that
 already exist? The opposite is true. There's nothing quite as needed today as
@@ -261,6 +286,8 @@ Clearly we need decentralized services more than ever, but the reality is
 despite all the interest in cryptocurrencies, these non-DEFI dapps have not
 succeeded in gaining adoption.
 
+**We Need Better Smart Contract Platforms**
+
 The main obstacle is the immaturity of the space; the difficulty of "dapp"
 (decentralized application) development and the limitations of smart contract
 systems. Existing object-oriented general purpose programming langauges such as
@@ -290,6 +317,8 @@ how and why, and how Gno offers "seamless interoperability of untrusted user
 programs" unlike any other smart contract systems, check
 out this [2024 Gophercon talk on Gno](https://github.com/gnolang/workshops/tree/main/presentations/2024-07-09--gophercon-us--jae).
 
+**AtomOne vs Gno.land**
+
 Gno.land (GNOT) is a separate chain from AtomOne (ATONE/PHOTON), but Gno.land
 and AtomOne are complementary and symbiotic systems. While gno.land solves the
 smart contract problem for all VaaS hubs, AtomOne solves the scaling problem
@@ -298,15 +327,19 @@ scaling solution is proven and adopted for gno.land. Gno.land is just one of
 many future smart contracting platforms, and won't be the last to scale on
 AtomOne.
 
-_(We don't consider programming in the Go based CosmosSDK as an alternative to
+We don't consider programming in the Go based CosmosSDK as an alternative to
 smart-contract programming for the purpose of this article because it is still
 more difficult than programming a dapp in say, Gno. The amount of boilerplate
 code and lines of code is much greater with the CosmosSDK, though the
 performance may be better than those that run on smart contract interpreting
 virtual machines. Lowering the barrier to dapp development is more impactful
-when the development complexity of blockchain applications is so high.)_
+when the development complexity of blockchain applications is so high. That is,
+the CosmosSDK is not a smart contracting platform, but a tool for building
+them.
 
 ## Utility as IBC Hub
+
+**The N^2 IBC Problem**
 
 The Cosmos hub has many IBC connections to other chains. Many of these chains,
 such as the Osmosis AMM DEX chain also have many IBC connections. Arguably all
@@ -330,6 +363,8 @@ Given the N-squared problem of IBC connections, it is inevitable that the
 Cosmos ecosystem eventually is compelled the solve this problem. The goal of
 Cosmos, but perhaps moreso now AtomOne, is to present the solution before it
 becomes a problem, thereby gaining adoption before other alternatives.
+
+**Crypto Court**
 
 Besides solving the N-squared problem of efficiency, IBC hubs also offer an
 important security feature which is not yet well implemented, but necessarily
@@ -372,7 +407,9 @@ is that failure resolution is possible.
 > hub will be protected when it needs intervention.
 > - https://github.com/tendermint/atom_one/tree/13a717d5623e84ccb37127bb0301ae0e4bbb6999#the-need-for-hubs
 
-While the VaaS/ICS hub's primary business model is about scaling transaction
+**ICS/VaaS Hub Model vs IBC Hub Model**
+
+While the ICS/VaaS hub's primary business model is about scaling transaction
 throughput, the IBC hub business is a natural complementary business model
 (since by virtue of the many VaaS hosted shards the demand for IBC token
 pegging is great).
@@ -390,12 +427,16 @@ hub-and-spoke model?".
 So far we have described the original vision of Cosmos, the utility of AtomOne
 and IBC hubs and ICS/VaaS hubs in general, and the primary utility of the
 PHOTON token as the fee payment token for AtomOne, but there is another element
-to the PHOTON fee token to be discussed.
+to the PHOTON fee-token to be discussed.
+
+**Memecoins**
 
 First, let's take a look at the origin of the memecoin. The first memecoin was
 created by Billy Markus and Jackson Palmer who decided to make Dogecoin as a
 joke. It had no particular purpose but to have fun, and as a form of satire
 about the speculative nature of Bitcoin and crypto.
+
+**Missioncoins**
 
 There are many memecoins today, with people speculating on memecoins based on
 the potential virality of the associated meme, but quite a distraction from the
@@ -431,8 +472,23 @@ platform, and killer dapp) that can be worked on independently.
 
 So far we have been working on developing the next generation smart contract
 platform with the gno.land chain and Gno VM which will first scale on AtomOne,
-and we will now begin work on the core ICS protocol work to enable the VaaS
+and we will now begin work on the core ICS/VaaS protocol work to enable the VaaS
 service. AtomOne will make Cosmos great again.
+
+## Call to Action
+
+Visit to our [website at atom.one](https://atom.one) and sign up for our
+newsletter. _A new website will be deployed on Tuesday._
+
+Stay tuned for more updates, as we have a few things in the pipeline including
+about the work beginning in ICS/VaaS, and also about one particular dapp that
+we are very excited about.
+
+AtomOne presently needs to set the Steering DAO council and BUIDL DAO council.
+If you have recommendations for nominees, please contact jae@tendermint.com
+with subject "[AtomOne] Council nomination" and include some detail with the
+best way to reach you and the nominee. We will soon make a proposal for the
+AtomOne stakers to vote on.
 
 -------
 
