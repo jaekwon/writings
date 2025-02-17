@@ -61,7 +61,7 @@ ICS. ATOM/ATONE stakers earn a portion of the transaction fees not just on the
 hub, but across all ICS shards. Whether the transaction fees across the ICS
 shards are paid in PHOTON or any other third-party token, ATOM/ATONE stakers
 earn them as income. (The ATOM/ATONE inflation on the other hand should not be
-considered income, but rather a penalty for not staking. XXX link to tax) In
+considered income, but rather a penalty for not staking. See the [staking token tax proposal](https://github.com/atomone-hub/future-security-agency/blob/main/WIP/002-staking-tokens-irs.md).) In
 short, ATOM and ATONE's only utility should be staking, and other utilities
 should be offered by ICS hosted applications.
 
@@ -436,4 +436,4 @@ service. AtomOne will make Cosmos great again.
 
 -------
 
-TODO Plug to suggested tax proposal.
+Special thanks to Giuseppe Natale for fixes and additional references.
