@@ -495,6 +495,8 @@ with subject "[AtomOne] Council nomination" and include some detail with the
 best way to reach you and the nominee. We will soon make a proposal for the
 AtomOne stakers to vote on.
 
+If you like this article, please retweet. 
+
 -------
 
 Special thanks to Giuseppe Natale for fixes and additional references.
