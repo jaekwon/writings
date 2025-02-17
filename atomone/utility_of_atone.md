@@ -8,7 +8,7 @@ _NOTE: if you can read this, this is still a rough draft._
 
 ## Introduction
 
-Tendermint prioneered POS (proof-of-stake) in 2014 (by solving the "nothing at
+Tendermint pioneered POS (proof-of-stake) in 2014 (by solving the "nothing at
 stake" problem) using classical consensus techniques originally developed in
 the 80's for fault-tolerant missile defense systems. Cosmos was the first
 blockchain to launch on Tendermint in 2019, and described a network of IBC
