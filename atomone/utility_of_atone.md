@@ -8,31 +8,35 @@ authors._
 
 Tendermint pioneered POS (proof-of-stake) in 2014 (by solving the "nothing at
 stake" problem) using classical consensus techniques originally developed in
-the 1980's for fault-tolerant missile defense systems. Cosmos was the first
-blockchain to launch on Tendermint in 2019, and described a network of IBC
-(inter-blockchain communication) connected blockchains. IBC as an acronym was
-coined for and by Cosmos. Cosmos in turn spurred a resurgence of interest and
-capital into consensus research worldwide. Today there are thousands of proof
-of stake blockchains.
+the 1980's for fault-tolerant missile defense systems. The Cosmos Hub was the
+first blockchain to launch on Tendermint in 2019, and described a network of
+IBC (inter-blockchain communication) connected blockchains. IBC as an acronym
+was coined by us for Cosmos. Cosmos in turn spurred a resurgence of interest
+and capital into consensus research worldwide. Today there are thousands of
+proof of stake blockchains.
+
+To distinguish between Cosmos, the internet of blockchains, and the Cosmos Hub,
+the first blockchain and hub for Cosmos, we will refer to the Cosmos Hub in
+this article as Gaia, the name of the Cosmos Hub program.
 
 **The Dual-Token Model**
 
-In the original Cosmos vision ATOM was not meant to be a monetary token or fee
-token, but rather ATOM was a new class of token that we dubbed the "staking
+In the original Cosmos Hub vision ATOM was not meant to be a monetary token or
+fee token, but rather ATOM was a new class of token that we dubbed the "staking
 token" ATOM was designed to inflate at a rate beetween 7% and 20% annually and
 the newly created ATOMs distributed back to the stakers pro-rata, effectively
 serving as punishment for not staking, while intentionally making them
 unsuitable as a token for payments or savings. 
 
-A separate fee-token was proposed for Cosmos that would serve as the fee-token
-which would not suffer from ATOM's continuous inflation. ATOM would be like
-proof-of-work mining hardware, while the fee token would be like deflationary
-bitcoins, and the fee-token is not concerned with consensus or chain
-governance. This distinction between staking-token and fee-token is called the
-"dual-token model". (see [Cosmos Token Model](https://github.com/cosmos/cosmos/blob/master/Cosmos_Token_Model.pdf)
+A separate fee-token was proposed for Gaia that would serve as the
+fee-token which would not suffer from ATOM's continuous inflation. ATOM would
+be like proof-of-work mining hardware, while the fee token would be like
+deflationary bitcoins, and the fee-token is not concerned with consensus or
+chain governance. This distinction between staking-token and fee-token is
+called the "dual-token model". (see [Cosmos Token Model](https://github.com/cosmos/cosmos/blob/master/Cosmos_Token_Model.pdf)
 which clearly suggests the dual token model and its advantages).  
 
-The dual-token distinction is especially important for Cosmos and AtomOne as an
+The dual-token distinction is especially important for Gaia and AtomOne as an
 IBC hub because a double-spend attack on the hub can steal IBC pegged tokens on
 all the chains that connect via IBC to the hub chain. With a single-token model
 there is no restriction for whales to take over the consensus of the hub; and
@@ -44,7 +48,7 @@ the staking-token distribution unless the staking-token holders wanted to sell;
 and even if they did sell, in the process of buying staking-tokens the attacker
 would incur a significantly higher cost in price and time.
 
-Despite popular demand Cosmos's fee-token has not been implemented for Cosmos
+Despite popular demand Gaia's fee-token has not been implemented 
 (but [is for AtomOne](https://github.com/atomone-hub/atomone/pull/57)), and
 instead many in the Cosmos ecosystem developed LS (liquid staking) derivatives
 as a convenient way to dodge ATOM's inflation, even though LS ultimately
@@ -59,7 +63,7 @@ that "ATOM has no utility".
 **Introducing AtomOne**
 
 For these reasons we and many supporters of the original (Atom 1.0) vision have
-forked Cosmos into a new chain named AtomOne. Instead of Cosmos's ATOM token
+forked Gaia into a new chain named AtomOne. Instead of Gaia's ATOM token
 AtomOne has the ATONE token. And while LS derivatives are banned for the ATONE
 token, AtomOne will finally support the PHOTON fee-token which can be acquired
 by (one-way) burning ATONE tokens. AtomOne has a
@@ -71,7 +75,7 @@ staking. ATONE can be burned to PHOTON with a capped supply of PHOTONs,
 ensuring economic balance and long-term scalability, but PHOTONs cannot be
 converted back into ATONE tokens.
 
-AtomOne and Cosmos are "coopetative" just as peer validators are, and together
+AtomOne and Gaia are "coopetative" just as peer validators are, and together
 we hope to fulfill the multi-hub vision as originally described for Cosmos and
 also as described later. The multi-hub model is especially important to give
 users freedom of choice, to prevent centralization of the Cosmos, and to test
@@ -85,7 +89,7 @@ inflation rate of the ATOM & ATONE token is fundamentally misinformed about its
 purpose and tokenomics. ATOM & ATONE does have utility as a staking-token, but
 it depends on a large volume of transactions (whether DEFI or not). The "spam
 prevention" or "priority" transaction fees may be small for each transaction,
-but they add up significantly with scale. This is why Cosmos and AtomOne offer
+but they add up significantly with scale. This is why Gaia and AtomOne offer
 ICS. ATOM & ATONE stakers earn a portion of the transaction fees not just on
 the hub, but across all ICS shards. Whether the transaction fees across the ICS
 shards are paid in PHOTON or any other third-party token, ATOM & ATONE stakers
@@ -144,12 +148,12 @@ platform providers--it is the general public.
 
 ## Layer 1: ICS/VaaS Hosting Provider
 
-Cosmos offers [PSS (partial set security)](https://cosmos.github.io/interchain-security/features/partial-set-security)
-which allows the Cosmos validators to permissionlessly participate in 
+Gaia offers [PSS (partial set security)](https://cosmos.github.io/interchain-security/features/partial-set-security)
+which allows the Gaia validators to permissionlessly participate in 
 validating new chains. This has a clear advantage over the previous initial
-release of ICS which required Cosmos hub governance to approve of new chains
+release of ICS which required Gaia governance to approve of new chains
 secured by the same validator set, requiring much coordination and making the
-adoption of new applications on Cosmos ICS a political endeavor.
+adoption of new applications on Gaia ICS a political endeavor.
 
 **Fractional Staking is Dangerous**
 
@@ -189,7 +193,8 @@ container, and upload it to the hub to be deployed as a new shard chain secured
 by the same validator set as the hub. We call this VaaS short for "validation
 as a service". It is a decentralization of the Amazon PaaS (platform as a
 service) web services model; just like you can simply deploy a linux container
-image to an Amazon EC2 server, you should be able to deploy one to Cosmos.
+image to an Amazon EC2 server, you should be able to deploy one to Gaia and
+AtomOne.
 
 (ICS stands for "interchain security" but this term is a bit misleading when
 referring to the model where the same validator set must secure all application
@@ -210,7 +215,7 @@ of its own, in which case the VaaS hub governance may intervene on behalf of
 it, or not, depending on the SLA (service level agreement) and constitution of
 the VaaS hub.
 
-AtomOne will not offer Cosmos's PSS as is, but instead adapt the existing ICS
+AtomOne will not offer Gaia's PSS as is, but instead adapt the existing ICS
 and PSS implementations to support the VaaS model of security. And instead of
 permissionless validation, AtomOne will offer permissionless deployment. This
 is the next significant technical feature that will be worked on for AtomOne
@@ -341,10 +346,10 @@ them.
 
 **The N^2 IBC Problem**
 
-The Cosmos hub has many IBC connections to other chains. Many of these chains,
+Gaia has many IBC connections to other chains. Many of these chains,
 such as the Osmosis AMM DEX chain also have many IBC connections. Arguably all
 chains that connect to many external chains via IBC is an IBC hub, we see the
-current manifestation of the IBC chain network (aka "Cosmos") as a precursor
+current manifestation of Cosmos the IBC chain network as a precursor
 step toward the desired IBC hub architecture as described in the [original
 vision](https://github.com/cosmos/cosmos/blob/master/HOME.md) where there is a
 distinction between hub chains and non-hub chains called zones. See also the
@@ -361,7 +366,7 @@ We even had a newsletter called "Hub and Spoke".
 
 Given the N-squared problem of IBC connections, it is inevitable that the
 Cosmos ecosystem eventually is compelled the solve this problem. The goal of
-Cosmos, but perhaps moreso now AtomOne, is to present the solution before it
+Gaia, but perhaps moreso now AtomOne, is to present the solution before it
 becomes a problem, thereby gaining adoption before other alternatives.
 
 **Crypto Court**
@@ -417,17 +422,17 @@ pegging is great).
 The IBC hub model will take some time to develop, probably only fully
 materializing after the VaaS feature is complete, but there are many ways to
 accelerate its adoption; to be described in future articles. The main question
-to be answered there, and also today for the builders of the Cosmos and AtomOne
+to be answered there, and also today for the builders of Gaia and AtomOne
 hubs, is "What differentiates an IBC token hub from a zone, why is the
 distinction needed, and what will get other chains and dapps to adopt the IBC
 hub-and-spoke model?".
 
 ## Memecoins vs Missioncoins
 
-So far we have described the original vision of Cosmos, the utility of AtomOne
-and IBC hubs and ICS/VaaS hubs in general, and the primary utility of the
-PHOTON token as the fee payment token for AtomOne, but there is another element
-to the PHOTON fee-token to be discussed.
+So far we have described the original vision of the Cosmos and Gaia, the
+utility of AtomOne and IBC hubs and ICS/VaaS hubs in general, and the primary
+utility of the PHOTON token as the fee payment token for AtomOne, but there is
+another element to the PHOTON fee-token to be discussed.
 
 **Memecoins**
 
