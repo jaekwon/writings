@@ -21,7 +21,7 @@ this article as Gaia, the name of the Cosmos Hub program.
 
 ### The Dual-Token Model
 
-In the original Cosmos Hub vision ATOM was not meant to be a monetary token or
+In the original Cosmos Hub vision [ATOM was not meant to be a monetary token](https://allinbits.com/blog/nwv-to-prop-848-atom-must-not-be-money/) or
 fee token, but rather ATOM was a new class of token that we dubbed the "staking
 token" ATOM was designed to inflate at a rate beetween 7% and 20% annually and
 the newly created ATOMs distributed back to the stakers pro-rata, effectively
