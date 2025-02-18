@@ -48,8 +48,9 @@ the staking-token distribution unless the staking-token holders wanted to sell;
 and even if they did sell, in the process of buying staking-tokens the attacker
 would incur a significantly higher cost in price and time.
 
-Despite popular demand Gaia's fee-token has not been implemented 
-(but [is for AtomOne](https://github.com/atomone-hub/atomone/pull/57)), and
+Despite popular demand Gaia's fee-token has not been implemented
+(but [is for AtomOne](https://github.com/atomone-hub/atomone/pull/57))
+since any IBC-pegged token can serve as the fee token anyways, and
 instead many in the Cosmos ecosystem developed LS (liquid staking) derivatives
 as a convenient way to dodge ATOM's inflation, even though LS ultimately
 undermines the security model of staking-tokens. Furthermore with the
