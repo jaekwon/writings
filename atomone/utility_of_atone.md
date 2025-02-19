@@ -28,13 +28,13 @@ the newly created ATOMs distributed back to the stakers pro-rata, effectively
 serving as punishment for not staking, while intentionally making them
 unsuitable as a token for payments or savings. 
 
-A separate fee-token was proposed for Gaia that would serve as the
-fee-token which would not suffer from ATOM's continuous inflation. ATOM would
-be like proof-of-work mining hardware, while the fee token would be like
-deflationary bitcoins, and the fee-token is not concerned with consensus or
-chain governance. This distinction between staking-token and fee-token is
-called the "dual-token model". (see [Cosmos Token Model](https://github.com/cosmos/cosmos/blob/master/Cosmos_Token_Model.pdf)
-which clearly suggests the dual token model and its advantages).  
+A separate fee-token was proposed for Gaia that would serve as the fee-token
+which would not suffer from ATOM's continuous inflation. ATOM would be like
+proof-of-work mining hardware, while the fee token would be like deflationary
+bitcoins, and the fee-token is not concerned with consensus or chain
+governance. This distinction between staking-token and fee-token is called the
+"dual-token model". (read more about the [Cosmos Token
+Model](https://github.com/cosmos/cosmos/blob/master/Cosmos_Token_Model.pdf)).
 
 The dual-token distinction is especially important for Gaia and AtomOne as an
 IBC hub because a double-spend attack on the hub can steal IBC pegged tokens on
