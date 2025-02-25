@@ -23,7 +23,7 @@ this article as Gaia, the name of the Cosmos Hub program.
 
 In the original Cosmos Hub vision [ATOM was not meant to be a monetary token](https://allinbits.com/blog/nwv-to-prop-848-atom-must-not-be-money/) or
 fee token, but rather ATOM was a new class of token that we dubbed the "staking
-token" ATOM was designed to inflate at a rate beetween 7% and 20% annually and
+token" ATOM was designed to inflate at a rate between 7% and 20% annually and
 the newly created ATOMs distributed back to the stakers pro-rata, effectively
 serving as punishment for not staking, while intentionally making them
 unsuitable as a token for payments or savings. 
@@ -174,7 +174,7 @@ freedom in choosing which chains to validate on, unless additional security is
 staked independently of the original ATOMs staked on the hub. In short,
 permissionless fractional staking is in general insecure. The fractional
 staking of ICS without PSS (where all validators secure all ICS chains) can
-also fail (if say a signfiicant portion of the validators were to conduct an
+also fail (if say a significant portion of the validators were to conduct an
 attack and steal all IBC pegged tokens), but the key metrics (such as the total
 value of ATOMs staked versus the potential gains from IBC token theft) can be
 measured more easily, and unlike PSS an arbitrarily small subset of malicious
@@ -360,7 +360,7 @@ We even had a newsletter called "Hub and Spoke".
 
 > One idea would be to connect each blockchain in the network with every other
 > via a direct IBC connection. The main problem with this approach is that the
-> number of connexion in the network grows exponentially with the number of
+> number of connections in the network grows exponentially with the number of
 > blockchains. If there are 100 blockchains in the network and each of them
 > needs to maintain an IBC connection with each other, that’s 4950 connections.
 > This quickly gets out of hand. - https://blog.cosmos.network/understanding-the-value-proposition-of-cosmos-ecaef63350d
